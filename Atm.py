@@ -56,11 +56,11 @@ class Atm:
 
     def management_menu(self, account):
         while True:
-            print('\nWelcome to Management Menu'
+            print(f'\nWelcome {account.getHolder()} to Management Menu'
                   '\nChoose choice here:'
                   '\n1.Deposit'
                   '\n2.Withdraw'
-                  '\n3.Close Bank Account'
+                  '\n3.Check Balance'
                   '\n4.Exit')
             choice = int(input('Enter your choice: '))
             if choice == 1:
@@ -74,7 +74,7 @@ class Atm:
                 self.accounts[account.getNumber()]['balance'] = account.getBalance()
                 self.saveData()
             elif choice == 3:
-                pass
+                print(f'Your balance: {account.getBalance()}')
             elif choice == 4:
                 print('Thank you for using ATM.')
                 break
