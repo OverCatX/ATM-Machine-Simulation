@@ -26,7 +26,7 @@ class BankAccount:
             print('Please type positive integer')
 
     def withdraw(self, amount) -> None:
-        if amount >= self.getBalance():
+        if self.getBalance() >= amount:
             self._account_balance -= amount
             print(f'Withdrawal successful! Your new balance is: ${self.getBalance()}')
         else:
