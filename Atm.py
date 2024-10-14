@@ -55,20 +55,20 @@ class Atm:
             choice = int(input('Enter your choice: '))
             if choice == 1:
                 amount = float(input('Enter amount to deposit: '))
-                if amount <= 0:
+                if amount > 0:
+                    account.deposit(amount)
+                    self.accounts[self.data['acc_number']]['balance'] = account.getBalance()
+                    self.saveData()
+                else:
                     print('Please enter positive number.')
-                    return
-                account.deposit(amount)
-                self.accounts[self.data['acc_number']]['balance'] = account.getBalance()
-                self.saveData()
             elif choice == 2:
                 amount = float(input('Enter amount to withdraw: '))
-                if amount < account.getBalance():
+                if amount >= account.getBalance():
+                    account.withdraw(amount)
+                    self.accounts[self.data['acc_number']]['balance'] = account.getBalance()
+                    self.saveData()
+                else:
                     print('Insufficient balance to withdraw.')
-                    return
-                account.withdraw(amount)
-                self.accounts[self.data['acc_number']]['balance'] = account.getBalance()
-                self.saveData()
             elif choice == 3:
                 pass
             elif choice == 4:
@@ -86,10 +86,10 @@ class Atm:
             if choice == 1:
                 acc_holder = input('Enter your name: ')
                 acc_pin = input('Enter your pin code (6 digits): ')
-                if len(acc_pin) != 6:
+                if len(acc_pin) == 6:
+                    self.createAccount(342531, acc_holder, acc_pin)
+                else:
                     print('Pin code must be 6 digits')
-                    return
-                self.createAccount(342531, acc_holder, acc_pin)
             elif choice == 2:
                 acc_holder = input('Enter your name: ')
                 acc_pin = input('Enter your pin code (6 digits): ')
