@@ -19,14 +19,16 @@ class BankAccount:
         return round(self._account_balance, 2)
 
     def deposit(self, amount) -> None:
-        if amount <= 0:
+        if amount > 0:
+            self._account_balance += amount
+            print(f'Deposit successful! Your new balance is: {self.getBalance()}')
+        else:
             print('Please type positive integer')
-        self._account_balance += amount
-        print(f'Deposit successful! Your new balance is: {self.getBalance()}')
 
     def withdraw(self, amount) -> None:
-        if amount < self.getBalance():
+        if amount >= self.getBalance():
+            self._account_balance -= amount
+            print(f'Withdrawal successful! Your new balance is: ${self.getBalance()}')
+        else:
             print(f'Insufficient balance to withdraw')
-        self._account_balance -= amount
-        print(f'Withdrawal successful! Your new balance is: ${self.getBalance()}')
 
