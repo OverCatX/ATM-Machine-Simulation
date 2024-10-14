@@ -97,7 +97,7 @@ class Atm:
                 acc_holder = input('Enter your name: ')
                 acc_pin = int(input('Enter your pin code (6 digits): '))
                 if len(str(acc_pin)) == 6:
-                    self.createAccount(342531, acc_holder, int(acc_pin))
+                    self.createAccount(genNumber(), acc_holder, int(acc_pin))
                 else:
                     print('Pin code must be 6 digits'
                           '\n')
