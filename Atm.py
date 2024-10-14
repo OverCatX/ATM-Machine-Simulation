@@ -34,5 +34,9 @@ class Atm:
             print(f"Account's number [{acc_number}] doesn't exists.")
         if self.accounts[acc_number]['pin'] != acc_pin:
             print(f'Password not correct.')
-        
+        self.management_menu()
+        print(f'Logged in..')
+
+    def management_menu(self):
+
 
