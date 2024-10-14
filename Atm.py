@@ -67,3 +67,13 @@ class Atm:
             self.saveData()
         elif choice == 2:
             amount = float(input('Enter amount to withdraw: '))
+            bankAccount = BankAccount(self.data['acc_number'],
+                                      self.data['acc_holder'],
+                                      self.data['acc_pin'],
+                                      self.data['acc_balance'])
+            if amount < bankAccount.getBalance():
+                print('Insufficient balance to withdraw.')
+                return
+            bankAccount.withdraw(amount)
+            self.accounts[self.data['acc_number']]['balance'] = bankAccount.getBalance()
+            self.saveData()
