@@ -48,7 +48,7 @@ class Atm:
         if acc_number not in self.accounts:
             print(f"Account's number [{acc_number}] doesn't exists.")
             return False
-        if self.accounts[acc_number]['pin'] != acc_pin:
+        if acc_pin != int(self.accounts[acc_number]['pin']):
             print(f'Password not correct.')
             return False
         return BankAccount(acc_number, self.accounts[acc_number]['holder'], acc_pin,
@@ -103,7 +103,7 @@ class Atm:
                           '\n')
             elif choice == 2:
                 acc_holder = input("Enter your account's number: ")
-                acc_pin = input('Enter your pin code (6 digits): ')
+                acc_pin = int(input('Enter your pin code (6 digits): '))
                 authed = self.authenticate(acc_holder, acc_pin)
                 if authed:
                     self.management_menu(authed)
