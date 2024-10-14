@@ -1,5 +1,16 @@
 import json
+import math
+import random
+
 from BankAccount import BankAccount
+
+
+def genNumber():
+    digits = [i for i in range(0,10)]
+    number = ""
+    for i in range(6):
+        number += str(digits[math.floor(random.random() * 10)])
+    return number
 
 
 class Atm:
@@ -17,7 +28,7 @@ class Atm:
 
     def saveData(self):
         with open(self.account_data, 'w') as data:
-            json.dump(self.account_data, data)
+            json.dump(self.accounts, data)
 
     def createAccount(self, acc_number, acc_holder, acc_pin):
         if acc_number in self.accounts:
@@ -45,7 +56,7 @@ class Atm:
 
     def management_menu(self, account):
         while True:
-            print('Welcome to Management Menu'
+            print('\nWelcome to Management Menu'
                   '\nChoose choice here:'
                   '\n1.Deposit'
                   '\n2.Withdraw'
@@ -76,7 +87,7 @@ class Atm:
 
     def atm_menu(self):
         while True:
-            print('Welcome to ATM Menu'
+            print('\nWelcome to ATM Menu'
                   '\nChoose choice here:'
                   '\n1.Create Bank Account'
                   '\n2.Login'
