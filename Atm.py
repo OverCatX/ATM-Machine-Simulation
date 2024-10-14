@@ -102,7 +102,7 @@ class Atm:
                     print('Pin code must be 6 digits'
                           '\n')
             elif choice == 2:
-                acc_holder = input('Enter your name: ')
+                acc_holder = input("Enter your account's number: ")
                 acc_pin = input('Enter your pin code (6 digits): ')
                 authed = self.authenticate(acc_holder, acc_pin)
                 if authed:
