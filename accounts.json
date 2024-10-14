@@ -1,17 +1,1 @@
-{
-    "123456": {
-        "holder": "Jimmy",
-        "pin": "1234",
-        "balance": 2000
-    },
-    "789101": {
-        "holder": "Time",
-        "pin": "5678",
-        "balance": 3500
-    },
-    "112233": {
-        "holder": "Tim",
-        "pin": "9101",
-        "balance": 5000
-    }
-}
+{"342531": {"holder": "Classic", "pin": 123456, "balance": 202914321.0}, "705389": {"holder": "Timmy", "pin": 123456, "balance": 0}, "531755": {"holder": "Ricky", "pin": 123456, "balance": 99500.0}}
