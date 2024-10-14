@@ -97,4 +97,5 @@ class Atm:
                 if authed:
                     self.management_menu(authed)
             elif choice == 3:
-                print()
+                print('Thank you for using ATM.')
+                break
